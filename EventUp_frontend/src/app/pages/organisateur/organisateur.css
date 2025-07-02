@@ -1,0 +1,119 @@
+.custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0,0,0,0.6);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 700px;
+  max-width: 95%;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.close-button {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  color: #999;
+  cursor: pointer;
+}
+
+.modal-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.modal-form-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.form-left, .form-right {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+input, select, textarea {
+  margin-bottom: 15px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.modal-actions {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.btn-cancel {
+  padding: 8px 16px;
+  margin-right: 10px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-submit {
+  padding: 8px 16px;
+  background-color: #f52d5a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #d6244d;
+}
+.btn-custom {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.btn-edit {
+  background-color: #a69fa3; /* jaune */
+}
+
+.btn-edit:hover {
+  background-color: #e0a0c3;
+}
+
+.btn-delete {
+  background-color: #e83e8c; /* rouge */
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}

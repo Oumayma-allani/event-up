@@ -1,0 +1,135 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "eventup-clients": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+             "src/styles.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/animate.css",
+              "src/assets/css/nivo-lightbox.css",
+              "src/assets/css/responsive.css",
+              "src/assets/css/main.css",
+              "src/assets/fonts/line-icons.css"
+             
+
+              
+
+            ],
+            "scripts": [
+            "src/assets/js/jquery-min.js",
+              "src/assets/js/bootstrap.min.js",
+              "src/assets/js/popper.min.js",
+              "src/assets/js/jquery.countdown.min.js",
+              "src/assets/js/jquery.counterup.min.js",
+              "src/assets/js/jquery.easing.min.js",
+              "src/assets/js/jquery.nav.js",
+              "src/assets/js/jquery.slicknav.js",
+              "src/assets/js/nivo-lightbox.js",
+              "src/assets/js/waypoints.min.js",
+              "src/assets/js/wow.js",
+              "src/assets/js/video.js",
+              "src/assets/js/main.js",
+               "node_modules/chart.js/dist/chart.umd.js"
+              
+
+                        
+            ]
+
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "eventup-clients:build:production"
+            },
+            "development": {
+              "buildTarget": "eventup-clients:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "assets": [
+               "src/favicon.ico",
+  "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "src/assets/fonts/line-icons.css",
+                "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}

@@ -1,0 +1,55 @@
+<div class="registration-page-wrapper py-5 px-3">
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h4>Liste des événements</h4>
+      <!-- (optionnel) bouton Ajouter -->
+      <a class="btn btn-success btn-sm" routerLink="/admin/events/add">+ Ajouter un événement</a>
+    <button class="btn btn-primary" (click)="showPopup = true">
+  ➕ Ajouter une sous-catégorie
+</button>
+
+<app-sous-categorie-add *ngIf="showPopup"></app-sous-categorie-add>
+<button class="btn btn-primary" (click)="showLocalPopup = true">
+  ➕ Ajouter un local
+</button>
+
+<app-local-add *ngIf="showLocalPopup"></app-local-add>
+    </div>
+    <div class="card-body">
+      <table class="table table-striped table-hover text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Date début</th>
+            <th>Date fin</th>
+            <th>Lieu</th>
+            <th>Organisateur</th>
+            <th>Sous-catégorie</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let event of events">
+  <td>{{ event.title }}</td>
+  <td>{{ event.description }}</td>
+  <td>{{ event.startDate }}</td>
+  <td>{{ event.endDate }}</td>
+  <td>{{ event.localName || '—' }}</td>
+  <td>{{ event.organisateurFullName || '—' }}</td>
+  <td>{{ event.sousCategorieName || '—' }}</td>
+  <td>{{ event.categorieName || '—' }}</td>
+  
+  <td>
+    <button (click)="onEdit(event)" class="btn btn-warning">Modifier</button>
+    <button (click)="onDelete(event.id)" class="btn btn-danger">Supprimer</button>
+  </td>
+</tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>

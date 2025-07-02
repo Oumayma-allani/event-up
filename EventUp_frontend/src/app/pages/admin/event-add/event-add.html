@@ -1,0 +1,63 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h5>Ajouter un événement</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()">
+        <!-- Titre -->
+        <div class="mb-3">
+          <label>Titre</label>
+          <input type="text" class="form-control" [(ngModel)]="event.title" name="title" required>
+        </div>
+
+        <!-- Description -->
+        <div class="mb-3">
+          <label>Description</label>
+          <input type="text" class="form-control" [(ngModel)]="event.description" name="description">
+        </div>
+
+        <!-- Dates -->
+        <div class="mb-3">
+          <label>Date début</label>
+          <input type="date" class="form-control" [(ngModel)]="event.startDate" name="startDate">
+        </div>
+
+        <div class="mb-3">
+          <label>Date fin</label>
+          <input type="date" class="form-control" [(ngModel)]="event.endDate" name="endDate">
+        </div>
+
+        <!-- Sous-catégorie -->
+        <div class="mb-3">
+          <label>Sous-catégorie</label>
+          <select class="form-select" [(ngModel)]="event.sousCategorie.id" name="sousCategorie" required>
+            <option *ngFor="let sc of sousCategories" [value]="sc.id">{{ sc.name }}</option>
+          </select>
+        </div>
+
+        <!-- Local -->
+        <div class="mb-3">
+          <label>Local</label>
+          <select class="form-select" [(ngModel)]="event.local.id" name="local" required>
+            <option *ngFor="let l of locals" [value]="l.id">{{ l.name }}</option>
+          </select>
+        </div>
+
+        <!-- Organisateur -->
+        <div class="mb-3">
+          <label>Organisateur</label>
+          <select class="form-select" [(ngModel)]="event.organisateur.id" name="organisateur" required>
+            <option *ngFor="let user of organisateurs" [value]="user.id">
+              {{ user.firstname }} {{ user.lastname }}
+            </option>
+          </select>
+        </div>
+
+        <!-- Boutons -->
+        <button type="submit" class="btn btn-success">Enregistrer</button>
+        <a routerLink="/admin/events" class="btn btn-secondary ms-2">Annuler</a>
+      </form>
+    </div>
+  </div>
+</div>

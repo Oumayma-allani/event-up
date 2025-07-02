@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      <h4>Modifier utilisateur</h4>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label>Prénom</label>
+          <input type="text" class="form-control" [(ngModel)]="user.firstname" name="firstname" required>
+        </div>
+        <div class="mb-3">
+          <label>Nom</label>
+          <input type="text" class="form-control" [(ngModel)]="user.lastname" name="lastname" required>
+        </div>
+        <div class="mb-3">
+          <label>Email</label>
+          <input type="email" class="form-control" [(ngModel)]="user.email" name="email" required>
+        </div>
+        <div class="mb-3">
+          <label>Rôle</label>
+          <select class="form-select" [(ngModel)]="user.role.id" name="role">
+            <option [value]="1">Admin</option>
+            <option [value]="2">Organisateur</option>
+            <option [value]="3">Participant</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success">Enregistrer</button>
+        <a routerLink="/admin/users" class="btn btn-secondary ms-2">Annuler</a>
+      </form>
+    </div>
+  </div>
+</div>

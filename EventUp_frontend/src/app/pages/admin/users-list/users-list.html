@@ -1,0 +1,55 @@
+<div class="container mt-4">
+
+  <!-- 🔍 Filtres -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4>Liste des utilisateurs</h4>
+    <div class="form-group mb-0">
+      <select class="form-select" [(ngModel)]="selectedRole" (change)="filterUsers()" style="width: 200px;">
+        <option value="">Tous les rôles</option>
+        <option value="ADMIN">Admin</option>
+        <option value="ORGANISATEUR">Organisateur</option>
+        <option value="PARTICIPANT">Participant</option>
+      </select>
+    </div>
+  </div>
+<div class="d-flex justify-content-end mb-3">
+  <select class="form-select" [(ngModel)]="selectedRole" (change)="filterUsers()" style="width: 200px;">
+    <option value="">Tous les rôles</option>
+    <option value="ADMIN">Admin</option>
+    <option value="ORGANISATEUR">Organisateur</option>
+    <option value="PARTICIPANT">Participant</option>
+  </select>
+</div>
+
+  <!-- 🧾 Tableau stylé -->
+  <div class="card">
+    <div class="card-body">
+      <table class="table table-hover text-center">
+        <thead class="table-dark">
+          <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Rôle</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of filteredUsers">
+            <td>{{ user.firstname }} {{ user.lastname }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              <span class="badge bg-primary" *ngIf="user.role?.name === 'ADMIN'">Admin</span>
+              <span class="badge bg-success" *ngIf="user.role?.name === 'ORGANISATEUR'">Organisateur</span>
+              <span class="badge bg-info text-dark" *ngIf="user.role?.name === 'PARTICIPANT'">Participant</span>
+            </td>
+            <td>
+              <button class="btn btn-sm btn-warning me-2" (click)="onEdit(user)">Modifier</button>
+              <button class="btn btn-sm btn-danger" (click)="onDelete(user.id)">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

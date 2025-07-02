@@ -1,0 +1,46 @@
+<div class="registration-page-wrapper py-5 px-3">
+<div class="container mt-5">
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h5 class="mb-0">📋 Liste des inscriptions</h5>
+    </div>
+    <div class="card-body p-4">
+        <div class="d-flex justify-content-end mb-3">
+  <a routerLink="/admin/registrations/add" class="btn btn-success">
+    ➕ Ajouter une inscription
+  </a>
+</div>
+      <table class="table table-hover table-bordered align-middle text-center">
+        <thead class="table-light">
+          <tr>
+            <th>👤 Participant</th>
+            <th>🎯 Événement</th>
+            <th>📅 Date d'inscription</th>
+            <th>🗑️ Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reg of registrations">
+  <td>
+    <strong>{{ reg.participant.firstname }} {{ reg.participant.lastname }}</strong><br>
+    <small>{{ reg.participant.email }}</small>
+  </td>
+  <td>
+    {{ reg.event.title }}
+  </td>
+  <td>
+    {{ reg.registrationDate | date: 'mediumDate' }}
+  </td>
+  <td>
+  <button class="btn btn-danger btn-sm" (click)="deleteRegistration(reg.id)">
+    Supprimer
+  </button>
+</td>
+</tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>

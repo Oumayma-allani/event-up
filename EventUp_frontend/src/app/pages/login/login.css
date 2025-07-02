@@ -1,0 +1,148 @@
+.auth-container {
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* occupe tout l'écran */
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #e91e63;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  color: #555;
+  background-color: white;
+  appearance: none;
+}
+
+select:invalid {
+  color: #999;
+}
+
+.auth-image {
+   flex: 1;
+  background-image: url('/assets/img/events.jpeg'); /* adapte selon ton projet */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-form {
+  width: 50%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-form h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.auth-form a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #e83e8c;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.auth-form a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.auth-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form input {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #e83e8c;
+}
+
+.auth-form button {
+  background-color: #e83e8c;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+.intro-text {
+  padding: 2rem;
+  border-radius: 8px;
+  color: #fff; /* texte blanc */
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  max-width: 80%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.intro-text strong {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e83e8c; 
+}
+/* Arrière-plan clair */
+main {
+  margin: 0;
+  padding: 0;
+  background-color: #e8e1e6; /* très clair */
+  overflow: hidden;
+}
+
+/* Bulles animées */
+.bubble-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* derrière tout */
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -100px;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 183, 255, 0.2);
+  border-radius: 50%;
+  animation: floatUp 20s infinite;
+  left: calc(100% * var(--i) / 20);
+  animation-delay: calc(-1s * var(--i));
+  z-index: -1;
+}
+
+.bubble:nth-child(odd) {
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 105, 180, 0.15); /* rose clair */
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.5);
+    opacity: 0;
+  }
+}

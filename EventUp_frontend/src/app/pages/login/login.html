@@ -1,0 +1,46 @@
+<main>
+<div class="bubble-background">
+  <div *ngFor="let i of bubbles" class="bubble" [ngStyle]="{'--i': i}"></div>
+</div>
+
+<div class="auth-container">
+  <aside class="auth-image">
+
+    <div class="intro-text">
+      <p *ngIf="mode === 'signup'"><strong>EventUp</strong> est encore mieux avec un compte.</p>
+      <p *ngIf="mode === 'login'">Bon retour sur<br/><strong>EventUp</strong> !</p>
+    </div>
+  </aside>
+
+  <section class="auth-form">
+    <h1>
+      <a [class.active]="mode === 'signup'" (click)="switchMode('signup')">sign up</a>
+      <a [class.active]="mode === 'login'" (click)="switchMode('login')">log in</a>
+    </h1>
+
+    <!-- Formulaire Sign Up -->
+   <form *ngIf="mode === 'signup'" (ngSubmit)="onSignup()" #signupForm="ngForm">
+  <input type="text" placeholder="Nom" [(ngModel)]="signupData.firstname" name="firstname" required>
+  <input type="text" placeholder="Prénom" [(ngModel)]="signupData.lastname" name="lastname" required>
+  <input type="email" placeholder="Email" [(ngModel)]="signupData.email" name="email" required>
+  <input type="password" placeholder="Mot de passe" [(ngModel)]="signupData.password" name="password" required>
+
+  
+  <select name="role"  [(ngModel)]="signupData.role.id" required>
+  <option [value]="2">Organisateur</option>
+  <option [value]="3">Participant</option>
+</select>
+
+  
+
+  <button type="submit">Sign Up</button>
+</form>
+    <!-- Formulaire Login -->
+    <form *ngIf="mode === 'login'" (ngSubmit)="onLogin()">
+      <input type="email" placeholder="Email" [(ngModel)]="loginData.email" name="email" required>
+      <input type="password" placeholder="Mot de passe" [(ngModel)]="loginData.password" name="password" required>
+      <button type="submit">Log In</button>
+    </form>
+  </section>
+</div>
+</main>

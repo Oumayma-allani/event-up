@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="card shadow">
+    <div class="card-header bg-success text-white">
+      <h5 class="mb-0">➕ Nouvelle inscription</h5>
+    </div>
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="mb-3">
+          <label for="participant" class="form-label">👤 Participant</label>
+          <select [(ngModel)]="registration.participantId" name="participant" class="form-select" required>
+            <option *ngFor="let user of participants" [value]="user.id">
+              {{ user.firstname }} {{ user.lastname }} 
+            </option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="event" class="form-label">🎯 Événement</label>
+          <select [(ngModel)]="registration.eventId" name="event" class="form-select" required>
+            <option *ngFor="let event of events" [value]="event.id">
+              {{ event.title }}
+            </option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+          Enregistrer
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

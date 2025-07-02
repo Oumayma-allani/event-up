@@ -1,0 +1,35 @@
+table {
+  font-size: 0.95rem;
+}
+
+.card {
+  border-radius: 12px;
+}
+
+th {
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05rem;
+}
+
+td small {
+  color: #6c757d;
+}
+.registration-page-wrapper {
+  min-height: calc(100vh - 100px); /* pour aérer l'affichage */
+  background-color: #f8f9fa; /* fond clair */
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.btn-success {
+  font-weight: bold;
+}

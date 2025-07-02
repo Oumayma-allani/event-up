@@ -1,0 +1,28 @@
+<div class="modal-overlay"  *ngIf="showModal">
+<div class="modal-container">
+    <div class="modal-content">
+      <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="modal-header">
+          <h5 class="modal-title">Ajouter une sous-catégorie</h5>
+          <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label>Catégorie</label>
+           <select class="form-select" [(ngModel)]="subcategory.categorie" name="categorie" required>
+  <option *ngFor="let cat of categories" [ngValue]="cat">{{ cat.name }}</option>
+</select>
+          </div>
+          <div class="mb-3">
+            <label>Nom de la sous-catégorie</label>
+            <input type="text" class="form-control" [(ngModel)]="subcategory.name" name="name" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" [disabled]="!form.valid">Enregistrer</button>
+          <button type="button" class="btn btn-secondary" (click)="close()">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

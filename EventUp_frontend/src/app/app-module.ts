@@ -20,7 +20,9 @@ import { RegistrationAdd } from './pages/admin/registration-add/registration-add
 import { SousCategorieAdd } from './pages/admin/sous-categorie-add/sous-categorie-add';
 import { LocalAdd } from './pages/admin/local-add/local-add';
 import { EventAdd } from './pages/admin/event-add/event-add';
-
+import { Calendar } from './pages/admin/calendar/calendar';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { EventAdd } from './pages/admin/event-add/event-add';
     SousCategorieAdd,
     LocalAdd,
     EventAdd,
+    Calendar,
     
    
   ],
@@ -47,11 +50,13 @@ import { EventAdd } from './pages/admin/event-add/event-add';
     BrowserModule,
     AppRoutingModule,
      FormsModule,
-     HttpClientModule
+     HttpClientModule,
+     FullCalendarModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

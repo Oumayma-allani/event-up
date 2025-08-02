@@ -2,6 +2,8 @@ import { Component,OnInit} from '@angular/core';
 import { UserService } from '../../../services/user';
 import { User } from '../../../models/user.model';
 import { Router } from '@angular/router';
+import * as XLSX from 'xlsx';
+import * as FileSaver from 'file-saver';
 @Component({
   selector: 'app-users-list',
   standalone: false,
@@ -24,6 +26,21 @@ filteredUsers: User[] = [];
     error: (err) => console.error('Erreur récupération users', err)
   });
   }
+  exportToExcel(): void {
+  const exportData = this.filteredUsers.map(user => ({
+    Nom: `${user.firstname} ${user.lastname}`,
+    Email: user.email,
+    Rôle: user.role?.name || ''
+  }));
+
+  const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(exportData);
+  const workbook: XLSX.WorkBook = { Sheets: { 'Utilisateurs': worksheet }, SheetNames: ['Utilisateurs'] };
+
+  const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+
+  const blob: Blob = new Blob([excelBuffer], { type: 'application/octet-stream' });
+  FileSaver.saveAs(blob, 'liste_utilisateurs.xlsx');
+}
   filterUsers(): void {
   if (this.selectedRole === '') {
     this.filteredUsers = this.users;

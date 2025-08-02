@@ -112,7 +112,6 @@ public class EventController {
                 return ResponseEntity.badRequest().body("Entité introuvable pour local, sous-catégorie ou organisateur");
             }
 
-            // Traitement de l'image
             String imageName = null;
             if (imageFile != null && !imageFile.isEmpty()) {
                 String uploadsDir = "uploads/";

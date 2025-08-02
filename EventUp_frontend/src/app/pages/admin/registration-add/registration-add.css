@@ -1,0 +1,4 @@
+.registration-page-wrapper {
+  min-height: calc(100vh - 100px); /* pour aérer l'affichage */
+  background-color: #f8f9fa; /* fond clair */
+}

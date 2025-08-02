@@ -13,6 +13,7 @@ import { EventEdit } from './pages/admin/event-edit/event-edit';
 import { RegistrationList } from './pages/admin/registration-list/registration-list';
 import { RegistrationAdd } from './pages/admin/registration-add/registration-add';
 import { EventAdd } from './pages/admin/event-add/event-add';
+import { Calendar } from './pages/admin/calendar/calendar';
 const routes: Routes = [
   {
     path: 'login',
@@ -50,7 +51,8 @@ const routes: Routes = [
         {path: 'events/add',component:EventAdd},
 
         {path : 'registrations', component:RegistrationList },
-        {path:'registrations/add',component:RegistrationAdd}
+        {path:'registrations/add',component:RegistrationAdd},
+        {path: 'calendar',component:Calendar}
 
     ]
 

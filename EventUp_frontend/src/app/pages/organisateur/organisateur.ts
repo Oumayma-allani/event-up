@@ -92,11 +92,15 @@ addSousCategorie(): void {
   const payload = {
     name: this.newSousCategorie.name,
     categorie: { id: this.newSousCategorie.categorieId }
+    
   };
 
   this.sousCategorieService.createSubcategory(payload).subscribe(() => {
     alert("✅ Sous-catégorie ajoutée !");
     this.newSousCategorie = { name: '', categorieId: null };
+    this.localService.getAll().subscribe(data => {
+        this.locals = data;
+      });
   });
 }
    resetEventForm(): void {
@@ -163,6 +167,12 @@ this.eventService.createWithImage(this.newEvent, this.selectedImage!, this.curre
     element.scrollIntoView({ behavior: 'smooth' });
   }
 }
+scrollToCategories(): void {
+  const element = document.getElementById('categorie');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+}
 loadEvents(): void {
   this.eventService.getAllEvents().subscribe({
     next: data => this.events = data,
@@ -223,6 +233,9 @@ ajouterLocal() {
     next: () => {
       alert("✅ Local ajouté avec succès !");
       this.nouveauLocal = { name: '', address: '', capacity: null, type: '' };
+      this.localService.getAll().subscribe(data => {
+        this.locals = data;
+      });
     },
     error: err => {
       console.error("Erreur ajout local :", err);

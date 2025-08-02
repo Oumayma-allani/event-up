@@ -1,5 +1,6 @@
 
 <body>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Header Area wrapper Starts -->
     <header id="header-wrap">
@@ -62,29 +63,30 @@
       </nav>
       <!-- Navbar End -->
 
-      <!-- Hero Area Start -->
-      <div id="hero-area" class="hero-area-bg">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-9 col-sm-12">
-              <div class="contents text-center">
-                <div class="icon">
-                  <i class="lni-mic"></i>
-                </div>
-                <p class="banner-info">15, Oct 2020 - Maria Hall, NY, United states</p>
-                <h2 class="head-title">Developers Conference</h2>
-                <p class="banner-desc">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, nobis nesciunt atque perferendis, ipsa doloremque deserunt cum qui.</p>
-                <div class="banner-btn">
-                  <a href="#" class="btn btn-common">Get Ticket</a>
-                </div>
-              </div>
-            </div>
+      <!-- Hero Area Start --> 
+<div id="hero-area" class="hero-area-bg">
+  <div class="overlay" style="background: rgba(0, 0, 0, 0.6);"></div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9 col-sm-12">
+        <div class="contents text-center text-white">
+          <div class="icon mb-3">
+            <i class="lni-users" style="font-size: 48px; color: #ffd700;"></i>
+          </div>
+<p class="banner-info">Bienvenue {{ currentUser.firstname }} </p>
+          <h2 class="head-title">Préparez-vous pour une expérience inoubliable !</h2>
+          <p class="banner-desc">
+            Rejoignez-nous pour vivre des moments riches en découvertes, échanges et apprentissages. Explorez les événements qui vous inspirent, connectez-vous avec d'autres participants et profitez de chaque instant.
+          </p>
+          <div class="banner-btn mt-4">
+          <a class="btn btn-common" (click)="scrollToEvents()"> Découvrir les événements</a>
           </div>
         </div>
       </div>
-      <!-- Hero Area End -->
+    </div>
+  </div>
+</div>
+<!-- Hero Area End -->
 
     </header>
 
@@ -107,36 +109,34 @@
     <!-- Count Bar End -->
 
     <!-- About Section Start -->
-    <section id="about" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 col-md-12 col-xs-12">
-            <div class="img-thumb">
-              <img class="img-fluid" src="assets/img/about/img1.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-12 col-xs-12">
-            <div class="about-content">
-              <div>
-                <div class="about-text">  
-                  <h2>About The Conference</h2>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ncididunt ametfh consectetur dolore magna aliqua. Ut enim ad minim veniam dolor sitame magnaelit ate consectetur adipisicing. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod.</p>
-                </div>
-                <ul class="stylish-list mb-3">
-                  <li><i class="lni-check-mark-circle"></i>Networking Sessions</li>
-                  <li><i class="lni-check-mark-circle"></i>Meet New Professional Faces</li>
-                  <li><i class="lni-check-mark-circle"></i>Get Inspired by Amazing Speakers</li>
-                  <li><i class="lni-check-mark-circle"></i>Lorem ipsum dolor sit ameterib</li>
-                  <li><i class="lni-check-mark-circle"></i>Lorem ipsum dolor sit ameterib quodsi</li>
-                </ul>
-                <a class="btn btn-common" href="#">Learn More</a>
-              </div>
-            </div>
-          </div>
+<section id="about" class="section-padding bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Image section -->
+      <div class="col-lg-6 col-md-12">
+        <div class="img-thumb text-center mb-4 mb-lg-0">
+          <img class="img-fluid rounded shadow img-about-participant" src="assets/img/about/participant-experience.jpg" alt="Expérience participant">
         </div>
       </div>
-    </section>
-    <!-- About Section End -->
+
+      <!-- Text section -->
+      <div class="col-lg-6 col-md-12">
+        <div class="about-content ps-lg-4">
+          <div class="about-text">
+            <h2 class="mb-4">Une expérience unique pour chaque participant</h2>
+            <p>
+              En tant que participant, vous êtes au cœur de l'événement. Notre objectif est de vous offrir un environnement riche en apprentissage, en connexions humaines et en inspiration.
+              Explorez, apprenez et vivez chaque instant pleinement !
+            </p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- About Section End -->
+
 
     <!-- Video Section Start -->
     <div class="ready-to-play">
@@ -195,82 +195,91 @@
     <!-- Information Bar End -->
 
      <!-- intro Section Start -->
-    <section id="intro" class="intro section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Why You Should Join?</h2>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row intro-wrapper">
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="single-intro-text mb-70">
-               <i class="lni-microphone"></i>
-               <h3>Great Speakers</h3>
-               <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia, excepturi.
-               </p>
-               <span class="count-number">01</span>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="single-intro-text">
-               <i class="lni-users"></i>
-               <h3 class="ts-title">New People</h3>
-               <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia, excepturi.
-               </p>
-               <span class="count-number">02</span>
-            </div>
-            <div class="border-shap left"></div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="single-intro-text mb-70">
-               <i class="lni-bullhorn"></i>
-               <h3>Global Event</h3>
-               <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia, excepturi.
-               </p>
-               <span class="count-number">03</span>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="single-intro-text mb-70">
-               <i class="lni-heart"></i>
-               <h3>Get Inspired</h3>
-               <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia, excepturi.
-               </p>
-               <span class="count-number">04</span>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="single-intro-text mb-70">
-               <i class="lni-cup"></i>
-               <h3>Networking Session</h3>
-               <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia, excepturi.
-               </p>
-               <span class="count-number">05</span>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="single-intro-text mb-70">
-               <i class="lni-gallery"></i>
-               <h3>Meet New Faces</h3>
-               <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus mollitia, excepturi.
-               </p>
-               <span class="count-number">06</span>
-            </div>
-          </div>
+<section id="intro" class="intro section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title-header text-center">
+          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Why You Should Join?</h2>
+          <p class="wow fadeInDown" data-wow-delay="0.2s">
+            Attending our events means more than just listening—<br> it's about learning, connecting, and being part of something inspiring.
+          </p>
         </div>
       </div>
-    </section>
-    <!-- intro Section End -->
+    </div>
+
+    <div class="row intro-wrapper">
+      <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="single-intro-text mb-70">
+          <i class="lni-microphone"></i>
+          <h3>Great Speakers</h3>
+          <p>
+            Hear from industry leaders and visionaries sharing their stories, strategies, and valuable insights to inspire your journey.
+          </p>
+          <span class="count-number">01</span>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="single-intro-text">
+          <i class="lni-users"></i>
+          <h3 class="ts-title">New People</h3>
+          <p>
+            Meet like-minded individuals, passionate professionals, and future collaborators from various backgrounds.
+          </p>
+          <span class="count-number">02</span>
+        </div>
+        <div class="border-shap left"></div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="single-intro-text mb-70">
+          <i class="lni-bullhorn"></i>
+          <h3>Global Event</h3>
+          <p>
+            Be part of a vibrant, international experience where diversity, innovation, and culture come together.
+          </p>
+          <span class="count-number">03</span>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="single-intro-text mb-70">
+          <i class="lni-heart"></i>
+          <h3>Get Inspired</h3>
+          <p>
+            Discover stories that motivate you to grow, challenge yourself, and think differently—both personally and professionally.
+          </p>
+          <span class="count-number">04</span>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="single-intro-text mb-70">
+          <i class="lni-cup"></i>
+          <h3>Networking Session</h3>
+          <p>
+            Engage in meaningful conversations, expand your professional network, and build long-lasting connections.
+          </p>
+          <span class="count-number">05</span>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-xs-12">
+        <div class="single-intro-text mb-70">
+          <i class="lni-gallery"></i>
+          <h3>Meet New Faces</h3>
+          <p>
+            Surround yourself with passionate participants and discover new ideas, cultures, and perspectives.
+          </p>
+          <span class="count-number">06</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- intro Section End -->
+
   
     <!-- Counter Area Start-->
     <section class="counter-section section-padding">
@@ -940,92 +949,63 @@
     </section>
     <!-- Team Section End -->
 
-    <!-- Gallary Section Start -->
-    <section id="gallery" class="section-padding">
-      <div class="container-fluid">
-<div class="contact-block">
-<div class="text-center">
-                  <h2>You are using Free Version</h2>
-                  <h4>Please, purchase full version to get all features and pages</h4><br>
-                  <b>Including:</b>
-                  <p>- Different Homepage Variations</p>
-                  <p>- All Elements and Features</p>
-                  <p>- Documentation File</p>
-                  <p>- Quick Support</p>
-                  <p>- Permission to Use in Commercial Projects</p>
-                  <p>- Footer Credit Removal</p>
-                  <p>- Working Contact Form</p>
-                  <br>
-                  <a href="https://rebrand.ly/eventup-purchase-ud" target="_blank" class="btn btn-common btn-lg">Purchase Now</a>
-</div>
-              </div>      </div>
-    </section>
-    <!-- Gallary Section End -->
+
 
     <!-- Event Slides Section Start -->
     <section id="event-up" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Upcoming Events</h2>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="assets/img/event/img1.jpg" alt="">
-              <div class="overlay-text">
-                <div class="content">
-                  <h3>Business Confrence</h3>
-                  <a href="#">View details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="assets/img/event/img2.jpg" alt="">
-              <div class="overlay-text">
-                <div class="content">
-                  <h3>Designer Confrence</h3>
-                  <a href="#">View details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="assets/img/event/img3.jpg" alt="">
-              <div class="overlay-text">
-                <div class="content">
-                  <h3>Marketer Confrence</h3>
-                  <a href="#">View details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="event-item">
-              <img class="img-fluid" src="assets/img/event/img4.jpg" alt="">
-              <div class="overlay-text">
-                <div class="content">
-                  <h3>JS Confrence</h3>
-                  <a href="#">View details</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-5">
-          <div class="col-12 text-center">
-            <a href="#" class="btn btn-common">More Event</a>
+  <div class="container">
+    <div class="section-title-header text-center">
+      <h2 class="section-title">Événements à venir</h2>
+      <p>Découvrez et participez aux événements passionnants !</p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3 col-md-6" *ngFor="let event of events">
+        <div class="event-item">
+          <img class="img-fluid event-img" [src]="'http://localhost:8080/uploads/' + event.image" alt="event image">
+          <div class="overlay-text">
+            <div class="content">
+             
+              <h3>{{ event.title }}</h3>
+<a href="#" (click)="showDetails(event); $event.preventDefault()">View details</a>
+</div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<!-- Popup détails de l'événement -->
+<div class="modal fade" id="eventDetailModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content" *ngIf="selectedEvent">
+      <div class="modal-header justify-content-center">
+  <h5 class="modal-title text-uppercase fw-bold">{{ selectedEvent.title }}</h5>
+  <button type="button" class="btn-close position-absolute end-0 me-3" data-bs-dismiss="modal"></button>
+</div>
+    <div class="modal-body text-center">
+  <div class="container px-3">
+    <img class="img-fluid rounded mb-3 mx-auto d-block" 
+         style="max-width: 400px;" 
+         [src]="'http://localhost:8080/uploads/' + selectedEvent.image" 
+         alt="event image">
+    
+    <p><strong>Description :</strong> {{ selectedEvent.description }}</p>
+    <p><strong>Date :</strong> {{ selectedEvent.startDate }} → {{ selectedEvent.endDate }}</p>
+    <p><strong>Lieu :</strong> {{ selectedEvent.localName }}</p>
+    <p><strong>Organisateur :</strong> {{ selectedEvent.organisateurFullName }}</p>
+  </div>
+</div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        <a class="btn btn-common" (click)="registerToEvent(selectedEvent.id)">S'inscrire</a>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- Event Slides Section End -->
 
     <!-- Ticket Pricing Area Start -->
@@ -1109,96 +1089,53 @@
     <!-- Ticket Pricing Area End -->
 
     <!-- Blog Section Start -->
-    <section id="blog" class="section-padding">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="section-title-header text-center">
-              <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Latest News</h2>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Lorem ipsum dolor sit amet, in quodsi vulputate pro. Ius illum vocent mediocritatem an <br> cule dicta iriure at phaedrum.</p>
-            </div>
-          </div>
+<section id="blog" class="section-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title-header text-center">
+          <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">🎫 Mes inscriptions</h2>
+          <p class="wow fadeInDown" data-wow-delay="0.2s">Voici la liste des événements auxquels vous êtes inscrit(e).</p>
         </div>
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="blog-item">
-              <div class="blog-image">
-                <a href="#">
-                  <img class="img-fluid" src="assets/img/blog/img-1.jpg" alt="">
-                </a>
-              </div>
-              <div class="descr">
-                <div class="icon">
-                  <i class="lni-image"></i>
-                </div>
-                <h3 class="title">
-                  <a href="#">
-                    Learn Something New
-                  </a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipsing elit, sed do eiusmodincididunt ut labore et dolore</p>
-              </div>
-              <div class="meta-tags">
-                <span class="date"><i class="lni-calendar"></i> Jan 20, 2020</span> 
-                <span class="comments"><i class="lni-comment-alt"></i> <a href="#"> 0 Comment</a></span>
-              </div>
-            </div>
+      </div>
+    </div>
+
+    <div class="row" *ngIf="userRegistrations.length > 0; else noRegistrations">
+      <div class="col-lg-4 col-md-6 col-xs-12" *ngFor="let reg of userRegistrations">
+        <div class="blog-item">
+          <div class="blog-image">
+            <img class="img-fluid" [src]="'http://localhost:8080/uploads/' + reg.event.image" alt="event image">
           </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="blog-item">
-              <div class="blog-image">
-                <a href="#">
-                  <img class="img-fluid" src="assets/img/blog/img-2.jpg" alt="">
-                </a>
-              </div>
-              <div class="descr">
-                <div class="icon">
-                  <i class="lni-arrow-right"></i>
-                </div>
-                <h3 class="title">
-                  <a href="#">
-                    Call for sponsors
-                  </a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipsing elit, sed do eiusmodincididunt ut labore et dolore</p>
-              </div>
-              <div class="meta-tags">
-                <span class="date"><i class="lni-calendar"></i> Jan 20, 2020</span> 
-                <span class="comments"><i class="lni-comment-alt"></i> <a href="#"> 0 Comment</a></span>
-              </div>
+          <div class="descr">
+            <div class="icon">
+              <i class="lni-calendar"></i>
             </div>
+            <h3 class="title">{{ reg.event.title }}</h3>
+            <p>
+              <strong>Date :</strong> {{ reg.event.startDate }} → {{ reg.event.endDate }}<br>
+              <strong>Lieu :</strong> {{ reg.event.localName }}
+            </p>
           </div>
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="blog-item">
-              <div class="blog-image">
-                <a href="#">
-                  <img class="img-fluid" src="assets/img/blog/img-3.jpg" alt="">
-                </a>
-              </div>
-              <div class="descr">
-                <div class="icon">
-                  <i class="lni-camera"></i>
-                </div>
-                <h3 class="title">
-                  <a href="#">
-                    Elon Musk joining the event
-                  </a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipsing elit, sed do eiusmodincididunt ut labore et dolore</p>
-              </div>
-              <div class="meta-tags">
-                <span class="date"><i class="lni-calendar"></i> Jan 20, 2020</span> 
-                <span class="comments"><i class="lni-comment-alt"></i> <a href="#"> 0 Comment</a></span>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 text-center">
-            <a href="#" class="btn btn-common">View all Blog</a>
+          <div class="meta-tags d-flex justify-content-between align-items-center px-3 pb-3">
+            <span class="text-muted">
+              <i class="lni-calendar"></i> {{ reg.registrationDate | date:'mediumDate' }}
+            </span>
+            <button class="btn btn-common" (click)="cancelRegistration(reg.id)">Se désinscrire</button>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Blog Section End -->
+    </div>
+
+    <!-- Si aucune inscription -->
+    <ng-template #noRegistrations>
+      <div class="text-center">
+        <p class="text-muted">Vous n'êtes inscrit à aucun événement pour le moment.</p>
+      </div>
+    </ng-template>
+  </div>
+</section>
+<!-- Blog Section End -->
+
 
     <!-- Sponsors Section Start -->
     <section id="sponsors" class="section-padding">
@@ -1365,7 +1302,22 @@
     <a href="#" class="back-to-top">
     	<i class="lni-chevron-up"></i>
     </a>
-
+<!-- Modal de confirmation d'inscription event-->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center p-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title w-100 text-success">✅ Inscription réussie !</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Vous êtes maintenant inscrit à cet événement.</p>
+        <button class="btn btn-success w-50" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin Modal de confirmation d'inscription event -->
     
 
     <!--

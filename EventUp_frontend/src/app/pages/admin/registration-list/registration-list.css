@@ -33,3 +33,7 @@ td small {
 .btn-success {
   font-weight: bold;
 }
+
+.btn-outline-danger {
+  font-weight: 600;
+}

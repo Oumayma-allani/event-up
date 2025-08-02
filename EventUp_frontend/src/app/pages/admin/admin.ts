@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Auth } from '../../services/auth';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-admin',
   standalone: false,
@@ -10,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class Admin implements OnInit{
   userFirstname: string = '';
+  userEmail: string = '';
   constructor(private authService: Auth, private router:Router) {}
 
 logout(): void {
@@ -20,6 +20,7 @@ logout(): void {
 if (userData) {
   const user = JSON.parse(userData);
   this.userFirstname = user.firstname;
+  this.userEmail = user.email;
 }
     if (!this.authService.isLoggedIn()) {
     this.router.navigate(['/login']);

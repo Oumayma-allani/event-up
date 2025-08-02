@@ -3,16 +3,23 @@
   <div class="card">
     <div class="card-header d-flex justify-content-between align-items-center">
       <h4>Liste des événements</h4>
-      <!-- (optionnel) bouton Ajouter -->
-      <a class="btn btn-success btn-sm" routerLink="/admin/events/add">+ Ajouter un événement</a>
-    <button class="btn btn-primary" (click)="showPopup = true">
-  ➕ Ajouter une sous-catégorie
-</button>
-
+      <div class="dropdown">
+    <button 
+      class="btn btn-success dropdown-toggle" 
+      type="button" 
+      id="dropdownActions" 
+      data-bs-toggle="dropdown" 
+      aria-expanded="false">
+      ➕ Actions
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownActions">
+      <li><a class="dropdown-item" [routerLink]="'/admin/events/add'">➕ Ajouter un événement</a></li>
+      <li><a class="dropdown-item" href="#" (click)="showPopup = true; $event.preventDefault()">➕ Ajouter une sous-catégorie</a></li>
+      <li><a class="dropdown-item" href="#" (click)="showLocalPopup = true; $event.preventDefault()">➕ Ajouter un local</a></li>
+    </ul>
+  </div>
+</div>
 <app-sous-categorie-add *ngIf="showPopup"></app-sous-categorie-add>
-<button class="btn btn-primary" (click)="showLocalPopup = true">
-  ➕ Ajouter un local
-</button>
 
 <app-local-add *ngIf="showLocalPopup"></app-local-add>
     </div>
@@ -51,5 +58,4 @@
       </table>
     </div>
   </div>
-</div>
 </div>

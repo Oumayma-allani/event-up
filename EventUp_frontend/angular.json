@@ -39,8 +39,11 @@
               "src/assets/css/nivo-lightbox.css",
               "src/assets/css/responsive.css",
               "src/assets/css/main.css",
-              "src/assets/fonts/line-icons.css"
-             
+              "src/assets/fonts/line-icons.css",
+               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                 "src/app/pages/admin/calendar/calendar.css"
+
+
 
               
 
@@ -59,8 +62,9 @@
               "src/assets/js/wow.js",
               "src/assets/js/video.js",
               "src/assets/js/main.js",
-               "node_modules/chart.js/dist/chart.umd.js"
-              
+               "node_modules/chart.js/dist/chart.umd.js",
+                "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+
 
                         
             ]

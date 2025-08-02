@@ -1,0 +1,53 @@
+/* Bouton "Today" */
+.fc-button.fc-today-button {
+  background-color: #ffc107 !important;  /* Jaune orangé */
+  border: none !important;
+  color: black !important;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+/* Boutons de navigation (flèches) */
+.fc .fc-button-group > .fc-prev-button,
+.fc .fc-button-group > .fc-next-button {
+  background-color: #6c757d !important;  /* Gris élégant */
+  border: none !important;
+  color: white !important;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.fc .fc-button-group > .fc-prev-button:hover,
+.fc .fc-button-group > .fc-next-button:hover,
+.fc-button.fc-today-button:hover {
+  background-color: #343a40 !important;
+  color: white !important;
+}
+/* Forcer le style du bouton Today */
+.fc .fc-button.fc-today-button {
+  background-color: #ffc107 !important;
+  color: black !important;
+  font-weight: bold !important;
+  border: none !important;
+  border-radius: 5px !important;
+}
+
+/* Forcer les styles des boutons de navigation */
+.fc .fc-button.fc-prev-button,
+.fc .fc-button.fc-next-button {
+  background-color: #6c757d !important;
+  color: white !important;
+  font-weight: bold !important;
+  border: none !important;
+  border-radius: 5px !important;
+}
+
+/* Hover effects */
+.fc .fc-button.fc-prev-button:hover,
+.fc .fc-button.fc-next-button:hover,
+.fc .fc-button.fc-today-button:hover {
+  background-color: #343a40 !important;
+  color: #fff !important;
+}

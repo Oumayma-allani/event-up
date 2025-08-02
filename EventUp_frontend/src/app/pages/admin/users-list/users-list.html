@@ -1,29 +1,29 @@
-<div class="container mt-4">
+<div class="registration-page-wrapper py-5 px-3">
 
-  <!-- 🔍 Filtres -->
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4>Liste des utilisateurs</h4>
-    <div class="form-group mb-0">
-      <select class="form-select" [(ngModel)]="selectedRole" (change)="filterUsers()" style="width: 200px;">
-        <option value="">Tous les rôles</option>
-        <option value="ADMIN">Admin</option>
-        <option value="ORGANISATEUR">Organisateur</option>
-        <option value="PARTICIPANT">Participant</option>
-      </select>
-    </div>
-  </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        
+      </div>
+      
 <div class="d-flex justify-content-end mb-3">
+        <button class="btn btn-outline-success" (click)="exportToExcel()">📤 Exporter Excel</button> 
+
   <select class="form-select" [(ngModel)]="selectedRole" (change)="filterUsers()" style="width: 200px;">
     <option value="">Tous les rôles</option>
     <option value="ADMIN">Admin</option>
     <option value="ORGANISATEUR">Organisateur</option>
     <option value="PARTICIPANT">Participant</option>
   </select>
+
+
 </div>
 
   <!-- 🧾 Tableau stylé -->
   <div class="card">
     <div class="card-body">
+        <h4 class="text-primary">Liste des utilisateurs</h4>
       <table class="table table-hover text-center">
         <thead class="table-dark">
           <tr>
@@ -52,4 +52,7 @@
     </div>
   </div>
 
+</div>
+  </div>
+      </div>
 </div>

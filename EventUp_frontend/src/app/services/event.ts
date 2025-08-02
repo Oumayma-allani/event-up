@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class EventService {
   private apiUrl = 'http://localhost:8080/api/events';
-
+private baseUrl='http://localhost:8080/api/registrations';
   constructor(private http: HttpClient) {}
 
   getAllEvents(): Observable<Event[]> {
@@ -47,5 +47,17 @@ createWithImage(formValue: any, image: File, currentUserId: number) {
 
   return this.http.post<any>('http://localhost:8080/api/events/upload', formData);
 }
+registerParticipant(registration: any) {
+    return this.http.post(`${this.baseUrl}`, registration);
+  }
+  deleteRegistration(id: number): Observable<void> {
+  return this.http.delete<void>(`http://localhost:8080/api/registrations/${id}`);
+}
+getAllRegistrations(): Observable<any[]> {
+  return this.http.get<any[]>(`http://localhost:8080/api/registrations`);
+}
 
+getRegistrationsByUser(userId: number): Observable<any[]> {
+  return this.getAllRegistrations(); // Le filtrage se fera dans le component
+}
 }
